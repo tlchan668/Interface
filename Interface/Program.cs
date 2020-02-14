@@ -9,19 +9,19 @@ namespace Interface {
 
             var hello = new Hello(english);//pass in instance of hello in english
             hello.Speak();
-            hello.Goodbye();
+            
 
 
             var hello2 = new Hello(spanish);
             hello2.Speak();
-            hello2.Goodbye();
+          
 
             var hellofr = new Hello(new HelloInFrench());//did this so not create new var 
             hellofr.Speak();
-            hellofr.Goodbye();
+     
             
             (new Hello(new HelloInChinese())).Speak();
-            (new Hello(new HelloInChinese())).Goodbye();
+            //(new Hello(new HelloInChinese())).Goodbye();
 
         }
         static void TestInterfaceWidgets() { 
