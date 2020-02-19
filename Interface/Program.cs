@@ -4,15 +4,15 @@ using System.Collections.Generic;
 namespace Interface {
     class Program {
         static void Main(string[] args) {
-            var english = new HelloInEnglish();
+            ISpeakable english = new HelloInEnglish();
             var spanish = new HelloInSpanish();
 
-            var hello = new Hello(english);//pass in instance of hello in english
+            Hello hello = new Hello(english);//pass in instance of hello in english
             hello.Speak();
             
 
 
-            var hello2 = new Hello(spanish);
+            Hello hello2 = new Hello(spanish);
             hello2.Speak();
           
 
@@ -22,19 +22,19 @@ namespace Interface {
             
             (new Hello(new HelloInChinese())).Speak();
             //(new Hello(new HelloInChinese())).Goodbye();
-
+            TestInterfaceWidgets();
         }
         static void TestInterfaceWidgets() { 
 
-            var w1 = new Widget();
+            IPrintable w1 = new Widget();
             w1.Print();
-            var aw = new Advwidget();
+            IPrintable aw = new Advwidget();
             aw.Print();
-            var sw = new Superwidget();
+            IPrintable sw = new Superwidget();
             sw.Print();
 
             //put into a collection
-            var widgets = new List<IPrintable>();
+            List<IPrintable> widgets = new List<IPrintable>();
             widgets.Add(w1);
             widgets.Add(aw);
             widgets.Add(sw);
